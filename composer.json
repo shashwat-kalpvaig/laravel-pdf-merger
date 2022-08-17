@@ -3,8 +3,8 @@
     "description": "Merge PDF Files",
     "type": "library",
     "require": {
-        "illuminate/support": "^8.83",
-        "setasign/fpdi-fpdf": "^2.3",
+        "illuminate/support": ">=5.5",
+        "setasign/fpdi-fpdf": ">=2.0",
         "laravel/helpers": "^1.5"
     },
     "license": "MIT",
