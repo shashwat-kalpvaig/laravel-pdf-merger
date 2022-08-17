@@ -1,0 +1,22 @@
+{
+    "name": "kalpvaig/laravel-pdf-merger",
+    "description": "Merge PDF Files",
+    "type": "library",
+    "require": {
+        "illuminate/support": "^8.83",
+        "setasign/fpdi-fpdf": "^2.3",
+        "laravel/helpers": "^1.5"
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Kalpvaig\\LaravelPdfMerger\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Shashwat Singh",
+            "email": "parihar.shashwat@gmail.com"
+        }
+    ]
+}
