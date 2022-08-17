@@ -16,12 +16,12 @@ Make the following changes to the main configuration file located at `config/app
 ```php
 'providers' => [
    ...
-   Kalpvaig\LaravelPDFMerger\Providers\PDFMergerServiceProvider::class
+   Kalpvaig\LaravelPdfMerger\Providers\PDFMergerServiceProvider::class
 ],
 
 'aliases' => [
    ...
-   'PDFMerger' => Kalpvaig\LaravelPDFMerger\Facades\PDFMergerFacade::class
+   'PDFMerger' => Kalpvaig\LaravelPdfMerger\Facades\PDFMergerFacade::class
 ]
 ```
 
@@ -59,14 +59,13 @@ $merger->inline();
 Example usage
 ```php
 $merger = new PDFMerger(new Filesystem());
-$merger->addPathToPDF(base_path('/vendor/grofgraf/laravel-pdf-merger/examples/one.pdf'), [2], 'P');
-$merger->addPDFString(file_get_contents(base_path('/vendor/grofgraf/laravel-pdf-merger/examples/two.pdf')), 'all', 'L');
+$merger->addPathToPDF(base_path('/vendor/kalpvaig/laravel-pdf-merger/examples/one.pdf'), [2], 'P');
+$merger->addPDFString(file_get_contents(base_path('/vendor/kalpvaig/laravel-pdf-merger/examples/two.pdf')), 'all', 'L');
 $merger->merge();
 $merger->save(base_path('/public/pdfs/merged.pdf'));
 ```
 
 ## Authors
-* [GrofGraf](https://github.com/GrofGraf)
 * [Shashwat] (https://github.com/50shashwat)
 
 
@@ -76,7 +75,7 @@ $merger->save(base_path('/public/pdfs/merged.pdf'));
 ## License
 The MIT License (MIT)
 
-Copyright (c) 2017 GrofGraf
+Copyright (c) 2017 Shashwat (Previous Maintainer - GrofGraf)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
