@@ -1,6 +1,6 @@
 <?php
 
-namespace GrofGraf\LaravelPDFMerger\Facades;
+namespace Kalpvaig\LaravelPDFMerger\Facades;
 
 use \Illuminate\Support\Facades\Facade;
 

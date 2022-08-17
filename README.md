@@ -16,12 +16,12 @@ Make the following changes to the main configuration file located at `config/app
 ```php
 'providers' => [
    ...
-   GrofGraf\LaravelPDFMerger\Providers\PDFMergerServiceProvider::class
+   Kalpvaig\LaravelPDFMerger\Providers\PDFMergerServiceProvider::class
 ],
 
 'aliases' => [
    ...
-   'PDFMerger' => GrofGraf\LaravelPDFMerger\Facades\PDFMergerFacade::class
+   'PDFMerger' => Kalpvaig\LaravelPDFMerger\Facades\PDFMergerFacade::class
 ]
 ```
 
@@ -58,7 +58,7 @@ $merger->inline();
 
 Example usage
 ```php
-$merger = \PDFMerger::init();
+$merger = new PDFMerger(new Filesystem());
 $merger->addPathToPDF(base_path('/vendor/grofgraf/laravel-pdf-merger/examples/one.pdf'), [2], 'P');
 $merger->addPDFString(file_get_contents(base_path('/vendor/grofgraf/laravel-pdf-merger/examples/two.pdf')), 'all', 'L');
 $merger->merge();
@@ -67,6 +67,7 @@ $merger->save(base_path('/public/pdfs/merged.pdf'));
 
 ## Authors
 * [GrofGraf](https://github.com/GrofGraf)
+* [Shashwat] (https://github.com/50shashwat)
 
 
 ## Credits

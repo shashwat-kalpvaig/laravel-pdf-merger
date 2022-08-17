@@ -1,9 +1,9 @@
 <?php
 
-namespace GrofGraf\LaravelPDFMerger\Providers;
+namespace Kalpvaig\LaravelPDFMerger\Providers;
 
 use Illuminate\Support\ServiceProvider;
-use GrofGraf\LaravelPDFMerger\PDFMerger;
+use Kalpvaig\LaravelPDFMerger\PDFMerger;
 
 class PDFMergerServiceProvider extends ServiceProvider
 {
