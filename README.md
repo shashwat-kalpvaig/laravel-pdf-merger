@@ -29,6 +29,12 @@ Make the following changes to the main configuration file located at `config/app
 > Also, note that this package requires Ghostscript installed on the server in order to functiona properly with PDF versions 1.5+. [Install Guide](https://www.ghostscript.com/doc/9.20/Install.htm)
 
 
+## Required Packages for Ubuntu Server
+```Install the following package
+- `sudo apt install ghostscript`
+// ghostscript should be installed on your machine
+```
+
 
 ## Usage
 
@@ -55,6 +61,7 @@ Available output options are:
 $merger->merge();
 $merger->inline();
 ```
+
 
 Example usage
 ```php
