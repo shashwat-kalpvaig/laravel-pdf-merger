@@ -25,7 +25,7 @@ Make the following changes to the main configuration file located at `config/app
 ]
 ```
 
-> When merging PDFs versions above 1.4 or PDF strings, a temporary PDF will be created during the process and stored in `storage/tmp` directory, therefore you may need to create it beforehand.
+> When merging PDFs versions above 1.4 or PDF strings, a temporary PDF will be created during the process and stored in `storage/app/public/tmp` directory, therefore you may need to create it beforehand.
 > Also, note that this package requires Ghostscript installed on the server in order to functiona properly with PDF versions 1.5+. [Install Guide](https://www.ghostscript.com/doc/9.20/Install.htm)
 
 
@@ -58,7 +58,9 @@ $merger->inline();
 
 Example usage
 ```php
-$merger = new PDFMerger(new Filesystem());
+//make sure you import Filesystem by adding : use Illuminate\Filesystem\Filesystem;
+$merger = new PDFMerger(new Filesystem(), 'fileName.pdf');
+// fileName.pdf you can generate
 $merger->addPathToPDF(base_path('/vendor/grofgraf/laravel-pdf-merger/examples/one.pdf'), [2], 'P');
 $merger->addPDFString(file_get_contents(base_path('/vendor/grofgraf/laravel-pdf-merger/examples/two.pdf')), 'all', 'L');
 $merger->merge();

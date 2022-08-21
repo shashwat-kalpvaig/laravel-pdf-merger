@@ -42,8 +42,9 @@ class PDFMerger {
      * Construct and initialize a new instance
      * @param Filesystem $Filesystem
      */
-    public function __construct(Filesystem $filesystem){
+    public function __construct(Filesystem $filesystem, $fileName){
         $this->filesystem = $filesystem;
+        $this->fileName = $fileName;
         $this->createDirectoryForTemporaryFiles();
         $this->fpdi = new Fpdi();
         $this->tmpFiles = collect([]);
@@ -118,7 +119,7 @@ class PDFMerger {
      * @return void
      */
     public function addPDFString($string, $pages = 'all', $orientation = null){
-        $filePath = storage_path('app/public/tmp/'.Str::random(16).'.pdf');
+        $filePath = storage_path('app/public/tmp/'.$fileName);
         $this->filesystem->put($filePath, $string);
         $this->tmpFiles->push($filePath);
         return $this->addPathToPDF($filePath, $pages, $orientation);
@@ -209,7 +210,7 @@ class PDFMerger {
       preg_match_all('!\d+!', $first_line, $matches);
       $pdfversion = implode('.', $matches[0]);
       if($pdfversion > "1.4"){
-        $newFilePath = storage_path('app/public/tmp/' . Str::random(16) . '.pdf');
+        $newFilePath = storage_path('app/public/tmp/' . $fileName);
         //execute shell script that converts PDF to correct version and saves it to tmp folder
         shell_exec('gs -dBATCH -dNOPAUSE -q -sDEVICE=pdfwrite -sOutputFile="'. $newFilePath . '" "' . $filePath . '"');
         $this->tmpFiles->push($newFilePath);
