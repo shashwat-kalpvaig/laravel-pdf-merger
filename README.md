@@ -56,6 +56,11 @@ $merger->merge();
 $merger->inline();
 ```
 
+```Scripts Required
+- `sudo apt install ghostscript`
+// ghostscript should be installed on your machine
+```
+
 Example usage
 ```php
 //make sure you import Filesystem by adding : use Illuminate\Filesystem\Filesystem;
