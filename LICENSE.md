@@ -1,6 +1,6 @@
 # The MIT License (MIT)
 
-Copyright (c) 2016 Malte Goldenbaum <github@webklex.com>
+Copyright (c) 2016 Shashwat Singh <github@kalpvaig.com>
 
 > Permission is hereby granted, free of charge, to any person obtaining a copy
 > of this software and associated documentation files (the "Software"), to deal
