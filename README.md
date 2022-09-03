@@ -8,7 +8,7 @@ PDF merger for Laravel inspired by another package, created for personal use. Te
 
 ## Installation
 ```bash
- $ composer require 50shashwat/laravel-pdf-merger
+ $ composer require kalpvaig/laravel-pdf-merger
 ```
 
 ## Configuration
@@ -28,6 +28,12 @@ Make the following changes to the main configuration file located at `config/app
 > When merging PDFs versions above 1.4 or PDF strings, a temporary PDF will be created during the process and stored in `storage/app/public/tmp` directory, therefore you may need to create it beforehand.
 > Also, note that this package requires Ghostscript installed on the server in order to functiona properly with PDF versions 1.5+. [Install Guide](https://www.ghostscript.com/doc/9.20/Install.htm)
 
+
+## Required Packages for Ubuntu Server
+```Install the following package
+- `sudo apt install ghostscript`
+// ghostscript should be installed on your machine
+```
 
 
 ## Usage
@@ -56,18 +62,14 @@ $merger->merge();
 $merger->inline();
 ```
 
-```Scripts Required
-- `sudo apt install ghostscript`
-// ghostscript should be installed on your machine
-```
-
-Example usage
+## Example usage
 ```php
-//make sure you import Filesystem by adding : use Illuminate\Filesystem\Filesystem;
-$merger = new PDFMerger(new Filesystem(), 'fileName.pdf');
-// fileName.pdf you can generate
-$merger->addPathToPDF(base_path('/vendor/grofgraf/laravel-pdf-merger/examples/one.pdf'), [2], 'P');
-$merger->addPDFString(file_get_contents(base_path('/vendor/grofgraf/laravel-pdf-merger/examples/two.pdf')), 'all', 'L');
+$merger = new PDFMerger(new Filesystem());
+
+$merger->addPathToPDF(base_path('/vendor/kalpvaig/laravel-pdf-merger/examples/one.pdf'), [2], 'P');
+$merger->addPDFString(file_get_contents(base_path('/vendor/kalpvaig/laravel-pdf-merger/examples/two.pdf')), 'all', 'L');
+
+
 $merger->merge();
 $merger->save(base_path('/public/pdfs/merged.pdf'));
 ```
@@ -83,7 +85,7 @@ $merger->save(base_path('/public/pdfs/merged.pdf'));
 ## License
 The MIT License (MIT)
 
-Copyright (c) 2017 GrofGraf
+Copyright (c) 2017 Shashwat (Previous Maintainer - GrofGraf)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
