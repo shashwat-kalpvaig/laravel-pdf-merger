@@ -69,6 +69,9 @@ $merger = new PDFMerger(new Filesystem());
 $merger->addPathToPDF(base_path('/vendor/kalpvaig/laravel-pdf-merger/examples/one.pdf'), [2], 'P');
 $merger->addPDFString(file_get_contents(base_path('/vendor/kalpvaig/laravel-pdf-merger/examples/two.pdf')), 'all', 'L');
 
+// Or You can use A for detecting automatic orientation
+$merger->addPDFString(file_get_contents(base_path('/vendor/kalpvaig/laravel-pdf-merger/examples/three.pdf')), 'all', 'A');
+
 
 $merger->merge();
 $merger->save(base_path('/public/pdfs/merged.pdf'));
